@@ -122,11 +122,11 @@ export default {
      * Obsłga event'u onEditorChange z edytora
      */
     const onEditorChange = (text) => {
-      //Wysłanie zapytań dla walut, które nie mają przypisanej nazwy w cache
-      let symbols = getSymbolsForRequest();
-
       //Przebudowa cache
       refreshCache(text);
+
+      //Wysłanie zapytań dla walut, które nie mają przypisanej nazwy w cache
+      let symbols = getSymbolsForRequest();
 
       if (preventToManyRequestError) {
         /**
@@ -143,7 +143,7 @@ export default {
             ? MAX_REQUEST_COUNT
             : symbols.length;
 
-        symbols().forEach((symbol) => {
+        symbols.forEach((symbol) => {
           if (counter <= MAX_REQUEST_COUNT) {
             counter++;
             getDataFromAPI(symbol);
@@ -160,7 +160,7 @@ export default {
          * W przypadku błędu zapytania są ponawiane
          * ------------------------
          */
-        symbols().forEach((symbol) => {
+        symbols.forEach((symbol) => {
           getDataFromAPI(symbol);
         });
       }

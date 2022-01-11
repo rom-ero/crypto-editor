@@ -9,9 +9,10 @@ html, body{
     flex-direction: column;
 }
 .editors-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
   }
 .editor-content {
   width: 100%;
@@ -27,8 +28,8 @@ html, body{
   display: flex;
   width: 50%;
   height: 100%;
-    
 }
+
 .editor-label{
   position: absolute;
   top: 30px;
