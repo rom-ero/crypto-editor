@@ -156,7 +156,6 @@ export default {
       } else {
         /**
          * 2.----------------------
-         *
          * W tym podejściu wysyłamy zapytania hurotowo nie przejmujac się limitem dla API,
          * W przypadku błędu zapytania są ponawiane
          * ------------------------
