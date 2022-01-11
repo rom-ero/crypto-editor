@@ -30,10 +30,15 @@ export default {
     // Wartość TRUE - ograniczenia zapytań do API do 10/s
     // Wartość FALSE - ignorujemy ograniczenia zapytań, obsługa błędów z API
     let preventToManyRequestError = true;
+
     const requestCount = ref(0);
+
     let symbolsForRequest = [];
+
     let startRequestTime = 0;
+
     const MAX_REQUEST_COUNT = 10;
+
     const MAX_REQUEST_TIME = 1000;
 
     const convertedText = ref("");
